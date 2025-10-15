@@ -1,5 +1,6 @@
 db.sqlite3
 .env
+.git
 venv/
 migrations/
 __pycache__/
