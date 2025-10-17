@@ -16,7 +16,7 @@ evitando que a data de entrada fosse inferior a data de saída de um usuário, e
 * calcular preço das diárias
 * validação de dadas
 * calular datas para as entradas e saidas
-* verificar se é um self.instance para atualizações.
+* verificar se é um PUT para manipulação do self.instance que vem do banco para atualizações.
 
 é feito quando o ``serializer.is_valid()`` é chamado, e após isso o meu ``data`` que é meu candidado a ``serializer.validated_data`` é validado e virá o meu ``validated``, com isso no ``serializer.save()``
 os dados são persistidos no banco.
