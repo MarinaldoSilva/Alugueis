@@ -51,7 +51,7 @@ Com essas futuras implementações vamos ter um sistema bem mais robusto.
 Sendo extremamente honesto, não foi fácil fazer isso, envolveu muito estudo e dedicação, parece simples né? Não foi tão simples assim, agora eu vejo como ficou e penso "na teória é simples, na prática agente sofre", mas a vida é assim, com o passar do tempo vamos fazer isso de forma natural.
 Vamos listar os princípais endpoints da API.
 
-* Criar user com Token
+* **Criar user com Token**
 
   ```python
     class UserRegisterAPIView(APIView):
@@ -88,7 +88,8 @@ Vamos listar os princípais endpoints da API.
 
   
 
-* POST - CASA
+* **POST - CASA**
+  
   para cadastrar uma casa temos que estar validados com um token(aquele que foi gerado acima)
 
   ```python
@@ -117,7 +118,7 @@ Vamos listar os princípais endpoints da API.
     }
     ```
 
-* GET - CASA
+* **GET - CASA**
 
   Listando as casas pelo ID/PK, fiz somente uma view, porém verifico se o PK foi passado no parâmetro, caso seja é um ``detail``, se não for é um ``list all()``
   Requsição:
@@ -140,7 +141,7 @@ Vamos listar os princípais endpoints da API.
   ```
 
 
-* UPDATE - CASA
+* **UPDATE - CASA**
 
   O processo de atualização foi o mais desafiador de todos para fazer, temos que prever possíveis erros, se o usuário tentar extender a estadia e esse imóvel já estiiver com reserva para o dia em       questão? como fazer para evitar sobrepossição de datas? Usando o ``Q`` do Django para criar formulas complexas(parece ser fácil, mas não é)
   
@@ -163,7 +164,7 @@ Vamos listar os princípais endpoints da API.
             return data
   ```
   
-* DELETE - CASA
+* **DELETE - CASA**
 
   Processo solimilar ao de listar PK, porém com o verbo HTTP setado para delete
   ```py
@@ -187,7 +188,7 @@ Vamos listar os princípais endpoints da API.
 
   ```
 
-* CRIAR ALUGUEL
+* **CRIAR ALUGUEL**
 
   Um demonstração de como o aluguel é criado.
 
@@ -235,13 +236,6 @@ Vamos listar os princípais endpoints da API.
     "data_saida": "2024-09-10" 
   }
 
-
-  Response
-  
-  {
-  "error": "você não pode atualizar o que não esta alocado a você."
-  }
-  
   ```
   <br>
 
@@ -273,8 +267,6 @@ instale o arquivido de libs:
 Faça as migrações para o banco
 
 ```py
-    python manage.py makemigrations users
-    python manage.py makemigrations reservas
     python manage.py migrate
 ```
 
